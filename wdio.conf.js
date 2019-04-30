@@ -1,3 +1,5 @@
+const LWCService = require('wdio-lwc-service');
+
 exports.config = {
     //
     // ====================
@@ -17,7 +19,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './force-app/test/wdio/*spec.js',
+        //'./force-app/test/wdio/*spec.js',
         './force-app/main/default/lwc/**/__wdio__/*.spec.js'
     ],
     // Patterns to exclude.
@@ -46,13 +48,15 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 5,
-        browserName: 'chrome',
-    }],
+    capabilities: [
+        {
+            // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+            // grid with only 5 firefox instances available you can make sure that not more than
+            // 5 instances get started at a time.
+            maxInstances: 5,
+            browserName: 'chrome'
+        }
+    ],
     //
     // ===================
     // Test Configurations
@@ -72,8 +76,8 @@ exports.config = {
     // - wdio-cli, wdio-config, wdio-sync, wdio-utils
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     // logLevels: {
-        // webdriver: 'info',
-        // 'wdio-applitools-service': 'info'
+    // webdriver: 'info',
+    // 'wdio-applitools-service': 'info'
     // },
     //
     // If you only want to run your tests until a specific amount of tests have failed use
@@ -102,7 +106,7 @@ exports.config = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         'selenium-standalone',
-        //[LWCService, {}],
+        [LWCService, {}],
     ],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -119,7 +123,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
-    
+
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
@@ -133,8 +137,8 @@ exports.config = {
         expectationResultHandler: function(passed, assertion) {
             // do something
         }
-    },
-    
+    }
+
     //
     // =====
     // Hooks
@@ -174,7 +178,7 @@ exports.config = {
      */
     // beforeCommand: function (commandName, args) {
     // },
-    
+
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -211,7 +215,7 @@ exports.config = {
      */
     // afterSuite: function (suite) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
@@ -248,10 +252,10 @@ exports.config = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
-}
+};

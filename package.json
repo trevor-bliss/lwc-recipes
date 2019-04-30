@@ -28,6 +28,9 @@
         "npm": ">= 6.5.0"
     },
     "devDependencies": {
+        "@lwc/compiler": "0.35.12",
+        "@lwc/engine": "0.35.12",
+        "@lwc/rollup-plugin": "0.35.12",
         "@salesforce/eslint-config-lwc": "^0.3.0",
         "@salesforce/lwc-jest": "^0.4.12",
         "@wdio/cli": "^5.7.15",
@@ -36,10 +39,12 @@
         "@wdio/selenium-standalone-service": "^5.7.8",
         "@wdio/spec-reporter": "^5.7.13",
         "@wdio/sync": "^5.7.13",
+        "compat-polyfills": "0.21.4",
         "eslint": "^5.15.1",
         "husky": "^1.3.1",
         "lint-staged": "^8.1.5",
         "prettier": "github:prettier/prettier",
+        "rollup-plugin-compat": "0.21.4",
         "semver": "^5.5.0",
         "wdio-lwc-service": "^0.1.1",
         "webdriverio": "^5.7.15"
