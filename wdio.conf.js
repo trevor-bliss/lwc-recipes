@@ -106,7 +106,9 @@ exports.config = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         'selenium-standalone',
-        [LWCService, {}],
+        [LWCService, {
+            // env: 'sfdx', // TODO: Rei to implement a flag to say we're in a Salesforce DX environment (so elements can be referenced as c-foo)
+        }]
     ],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

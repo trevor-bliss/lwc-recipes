@@ -4928,6 +4928,11 @@ lru-cache@^4.0.1, lru-cache@^4.1.3:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
+lwc-components-lightning@^1.0.19-alpha:
+  version "1.0.19-alpha"
+  resolved "https://nexus.soma.salesforce.com/nexus/content/groups/npm-all/lwc-components-lightning/-/6a6b7d58ddc12d27c8e0c43369b527b09af69d11.tgz#6a6b7d58ddc12d27c8e0c43369b527b09af69d11"
+  integrity sha512-dYudKMwClT2DXYlW/+e/X5477gqhi291xC5KY0KY+Gv6G7Rn4OMuu3lIrbO2ZhdefVmpS9afOVH6GqTHEKoOaA==
+
 magic-string@^0.25.2, magic-string@~0.25.1:
   version "0.25.2"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.2.tgz#139c3a729515ec55e96e69e82a11fe890a293ad9"
