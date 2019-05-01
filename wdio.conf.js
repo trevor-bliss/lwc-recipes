@@ -19,7 +19,10 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        //'./force-app/test/wdio/*spec.js',
+        // broader tests, potential future spot for end-to-end tests against scratch org
+        './force-app/test/wdio/*spec.js',
+
+        // individual component tests
         './force-app/main/default/lwc/**/__wdio__/*.spec.js'
     ],
     // Patterns to exclude.

@@ -1,14 +1,14 @@
 describe('<c-hello-binding />', () => {
     it('outputs "Hello, World!" as default text', () => {
         browser.url(URL);
-        const element = $('<lwc-hello-binding>');
+        const element = $('lwc-hello-binding');
         expect(element.getText()).toContain('Hello, World!');
     });
 
     it('updates greeting on input change', () => {
         browser.url(URL);
-        const element = $('<lwc-hello-binding>');
-        const input = element.$('<lightning-input>').shadow$('input');
+        const element = $('lwc-hello-binding');
+        const input = element.shadow$('lightning-input').shadow$('input');
 
         input.clearValue('');
         input.setValue('meep');
