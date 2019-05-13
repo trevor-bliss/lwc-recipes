@@ -7,9 +7,25 @@ describe('c-hello', () => {
         while (document.body.firstChild) {
             document.body.removeChild(document.body.firstChild);
         }
+        jest.clearAllMocks();
     });
 
     it('displays greeting', () => {
+        const mockGeolocation = {
+            getCurrentPosition: jest.fn().mockImplementation(success =>
+                Promise.resolve(
+                    success({
+                        coords: {
+                            latitude: 10,
+                            longitude: 10
+                        }
+                    })
+                )
+            )
+        };
+
+        navigator.geolocation = mockGeolocation;
+
         // Create element
         const element = createElement('c-hello', {
             is: Hello
@@ -19,5 +35,13 @@ describe('c-hello', () => {
         // Verify displayed greeting
         const div = element.shadowRoot.querySelector('div');
         expect(div.textContent).toBe('Hello, World!');
+    });
+
+    it('foo', () => {
+        const element = createElement('c-hello', {
+            is: Hello
+        });
+        document.body.appendChild(element);
+        expect(1).toBe(1);
     });
 });
