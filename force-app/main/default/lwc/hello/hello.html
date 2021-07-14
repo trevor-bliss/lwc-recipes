@@ -1,9 +1,16 @@
 <template>
-    <lightning-card title="Hello" icon-name="custom:custom14">
-        <div class="slds-var-m-around_medium">Hello, {greeting}!</div>
-
-        <c-view-source source="lwc/hello" slot="footer">
-            Bind an HTML element to a component property.
-        </c-view-source>
-    </lightning-card>
+	<p>
+		A progress indicator displays the steps in a process. All steps preceding the step specified by currentStep are
+		marked completed.
+	</p>
+	<lightning-button-group>
+		<lightning-button label="base" onclick={handleClick}></lightning-button>
+		<lightning-button label="path" onclick={handleClick}></lightning-button>
+	</lightning-button-group>
+	<lightning-progress-indicator current-step="3" type={type} variant="base">
+		<lightning-progress-step label="Step 1" value="1"></lightning-progress-step>
+		<lightning-progress-step label="Step 2" value="2"></lightning-progress-step>
+		<lightning-progress-step label="Step 3" value="3"></lightning-progress-step>
+		<lightning-progress-step label="Step 4" value="4"></lightning-progress-step>
+	</lightning-progress-indicator>
 </template>

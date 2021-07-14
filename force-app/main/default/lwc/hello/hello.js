@@ -1,5 +1,11 @@
 import { LightningElement } from 'lwc';
+export default class ProgressIndicatorBasic extends LightningElement {
+    type = "path"
 
-export default class Hello extends LightningElement {
-    greeting = 'World';
+      handleClick(event) {
+        const buttonLabel= event.target.label;
+        if (this.type !== buttonLabel) {
+          this.type = buttonLabel
+        }
+    }
 }
